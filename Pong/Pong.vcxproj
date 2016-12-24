@@ -88,10 +88,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\SFML-2.4.1\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\SFML-2.4.1\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;sfml-system-d.lib;sfml-main-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -145,17 +148,50 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AIPaddle.h" />
+    <ClInclude Include="EndGameMenu.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameBall.h" />
+    <ClInclude Include="GameObjectManager.h" />
+    <ClInclude Include="IAudioProvider.h" />
+    <ClInclude Include="InGameMenu.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="PlayerPaddle.h" />
+    <ClInclude Include="PlayerPaddle2.h" />
+    <ClInclude Include="ScoreBoard.h" />
+    <ClInclude Include="ServiceLocator.h" />
+    <ClInclude Include="SFMLSoundProvider.h" />
+    <ClInclude Include="SoundFileCache.h" />
+    <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="VisibleGameObject.h" />
+    <ClInclude Include="VsGameMenu.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AIPaddle.cpp" />
+    <ClCompile Include="EndGameMenu.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameBall.cpp" />
+    <ClCompile Include="GameObjectManager.cpp" />
+    <ClCompile Include="InGameMenu.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="PlayerPaddle.cpp" />
+    <ClCompile Include="PlayerPaddle2.cpp" />
     <ClCompile Include="Pong.cpp" />
+    <ClCompile Include="ScoreBoard.cpp" />
+    <ClCompile Include="ServiceLocator.cpp" />
+    <ClCompile Include="SFMLSoundProvider.cpp" />
+    <ClCompile Include="SoundFileCache.cpp" />
+    <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="VisibleGameObject.cpp" />
+    <ClCompile Include="VsGameMenu.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
