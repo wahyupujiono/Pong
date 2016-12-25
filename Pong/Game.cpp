@@ -156,6 +156,7 @@ void Game::GameLoop() {
 
 	case Game::Completed:
 		ShowEndGameMenu();
+		ResetGame();
 		ServiceLocator::GetAudio()->PlaySong("audio/Soundtrack.ogg", true);
 		break;
 
@@ -253,7 +254,7 @@ void Game::ShowInGameMenu1() {
 		break;
 	case InGameMenu::Restart:
 		ServiceLocator::GetAudio()->PlaySound("audio/menuSelect.wav");
-		ResetGame1();
+		ResetGame();
 		_gameState = Game::ShowingMenu;
 		ServiceLocator::GetAudio()->PlaySong("audio/Soundtrack.ogg", true);
 		break;
@@ -279,13 +280,6 @@ void Game::ResetBackground() {
 }
 
 void Game::ResetGame() {
-	_scoreBoard.ResetScore();
-	_gameObjectManager.ResetAll();
-	_gameObjectManager.UpdateAll();
-
-}
-
-void Game::ResetGame1() {
 	_scoreBoard.ResetScore();
 	_gameObjectManager.ResetAll();
 	_gameObjectManager.UpdateAll();
